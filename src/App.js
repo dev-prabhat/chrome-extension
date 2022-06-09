@@ -1,8 +1,7 @@
 import { useState, useEffect} from "react"
 import axios from "axios"
+import { Time , Weather } from "./components"
 import "./styles.css"
-import { Time } from "./components/Time/Time"
-import { Weather } from "./components/Weather/Weather"
 
 function App() {
   const [imageURL, setImageURL] = useState("")
