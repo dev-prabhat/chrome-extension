@@ -2,12 +2,13 @@ import { useState, useEffect} from "react"
 import axios from "axios"
 import "./styles.css"
 import { Time } from "./components/Time/Time"
+import { Weather } from "./components/Weather/Weather"
 
 function App() {
   const [imageURL, setImageURL] = useState("")
   const [name, setName] = useState("")
   const [focus, setFocus] = useState("")
-  const [details, setDetails] = useState({name:"",focus:""})
+  const [details, setDetails] = useState(JSON.parse(localStorage.getItem("userDetails")) ?? {})
 
   
   const submitName = (e) => {
@@ -25,17 +26,17 @@ function App() {
   useEffect(()=>{
     (async()=>{
       try {
-        const { data } = await axios.get(`https://api.unsplash.com/photos/random/?client_id=QnUP7wG0hIygZ9UjGZPtoV-qs7uI97WbpUAg8J5clnM&&orientation=landscape&&query=stars%20dark`)
-
-        // const { data } = await axios.get(`https://api.unsplash.com/photos/random/?client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}&&orientation=landscape&&query=stars%20dark`)
-
+        const { data } = await axios.get(`https://api.unsplash.com/photos/random/?client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}&&orientation=landscape&&query=stars%20dark`)
         setImageURL(data?.urls?.regular)
       } catch (error) {
         console.log(error)
-        setImageURL("")
       }
     })()
   },[])
+
+  useEffect(()=>{
+    localStorage.setItem("userDetails",JSON.stringify(details))
+  },[details])
 
   return (
       <main className="main__container" style={{backgroundImage:`url(${imageURL})`, backgroundSize:"cover"}}>
@@ -74,6 +75,7 @@ function App() {
       {
         details.focus && <p className="focus">{details.focus}</p>
       }
+      <Weather/>
     </main> 
   );
 }

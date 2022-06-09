@@ -1,0 +1,17 @@
+.weather__report{
+    position: fixed;
+    top: 2%;
+    left: 2%;
+}
+
+.city,.temp{
+    color: white;
+}
+
+.city{
+    font-size: 2rem;
+}
+
+.temp{
+    font-size: 1.5rem;
+}
