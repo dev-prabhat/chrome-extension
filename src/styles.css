@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.main__container{
+    min-height: 100vh;
+    width: 100%;
+    opacity: 0.8;
+}
+
+.details__container,.name__container{
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem 0.5rem;
+    width: max-content;
+}
+
+
+.question,.greeting{
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.focus-label{
+    margin: 4rem 0 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.input-field,.focus-field{
+    width: 100%;
+    margin: 0 auto;
+    background: inherit;
+    border: none;
+    text-align: center;
+    font-size: 2rem;
+    margin: 1rem 0;
+    padding: 0.5rem 0;
+    color: white;
+}
+
+.input-field:focus{
+    outline: none;
+    border-bottom: 2px solid white;
+}
+
+.submit-btn{
+    width: 30%;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 5px 0;
+    border-radius: 5rem;
+    border: none;
+    cursor: pointer;
+}
+
+.focus-field{
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+.focus-field:focus{
+    outline: none;
+    border-bottom: 2px solid white;
+}
+
+.focus{
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5%;
+    font-size: 1.5rem;
+    color: white;
+}

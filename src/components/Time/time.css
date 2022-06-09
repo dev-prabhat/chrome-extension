@@ -1,0 +1,18 @@
+.time-date_container{
+    position: fixed;
+    bottom: 5%;
+    left: 2%;
+    padding: 10px;
+}
+
+.current-time,.current-date{
+    color: white;
+}
+
+.current-time{
+   font-size: 3rem;
+}
+
+.current-date{
+    font-size: 1.5rem;
+}
