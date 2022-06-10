@@ -6,7 +6,8 @@ export const SingleTodo = ({todo,setTodoList}) => {
     const [completed, setCompleted] = useState("none")
 
     const deleteSingleTodo = (id) => {
-        setTodoList(prev => prev.filter(todo => todo.id !== id))
+        if(completed === "line-through") setTodoList(prev => prev.filter(todo => todo.id !== id))
+        else alert("Not Completed")
     }
 
     return(

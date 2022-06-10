@@ -12,12 +12,15 @@ function App() {
   
   const submitName = (e) => {
     e.preventDefault()
+    if(name.trim() === "")  return alert("Invalid Input")
     setDetails(prev => ({...prev,name:name}))
     setName("")
+    
   } 
 
   const submitFocus = (e) => {
     e.preventDefault()
+    if(focus.trim() === "") return alert("Invalid Input")
     setDetails(prev => ({...prev,focus:focus}))
     setFocus("")
   }

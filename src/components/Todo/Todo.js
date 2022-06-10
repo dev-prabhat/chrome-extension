@@ -9,6 +9,7 @@ export const Todo = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        if(todo.trim() === "") return alert("Please Enter todo..")
         setTodoList(prev => ([...prev ,{ id: uuid(),title:todo}]))
         setTodo("")
     }
