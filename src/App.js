@@ -1,6 +1,6 @@
 import { useState, useEffect} from "react"
 import axios from "axios"
-import { Time , Weather } from "./components"
+import { Time , Weather , Todo} from "./components"
 import "./styles.css"
 
 function App() {
@@ -12,16 +12,20 @@ function App() {
   
   const submitName = (e) => {
     e.preventDefault()
+    if(name.trim() === "")  return alert("Invalid Input")
     setDetails(prev => ({...prev,name:name}))
     setName("")
+    
   } 
 
   const submitFocus = (e) => {
     e.preventDefault()
+    if(focus.trim() === "") return alert("Invalid Input")
     setDetails(prev => ({...prev,focus:focus}))
     setFocus("")
   }
 
+  
   useEffect(()=>{
     (async()=>{
       try {
@@ -74,6 +78,10 @@ function App() {
       {
         details.focus && <p className="focus">{details.focus}</p>
       }
+      {
+        details.name && <Todo/>
+      }
+      <button className="edit-btn" onClick={()=>setDetails(details.name="")}>Edit Name</button>
       <Weather/>
     </main> 
   );
