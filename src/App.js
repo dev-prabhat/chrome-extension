@@ -22,6 +22,7 @@ function App() {
     setFocus("")
   }
 
+  
   useEffect(()=>{
     (async()=>{
       try {
@@ -77,6 +78,7 @@ function App() {
       {
         details.name && <Todo/>
       }
+      <button className="edit-btn" onClick={()=>setDetails(details.name="")}>Edit Name</button>
       <Weather/>
     </main> 
   );
