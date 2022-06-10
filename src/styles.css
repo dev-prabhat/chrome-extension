@@ -57,6 +57,14 @@ body{
     color: white;
 }
 
+.input-field::placeholder{
+   color: white;
+}
+
+.focus-field::placeholder{
+    color: white;
+}
+
 .input-field:focus{
     outline: none;
     border-bottom: 2px solid white;
