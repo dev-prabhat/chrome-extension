@@ -1,6 +1,6 @@
 import { useState, useEffect} from "react"
 import axios from "axios"
-import { Time , Weather } from "./components"
+import { Time , Weather , Todo} from "./components"
 import "./styles.css"
 
 function App() {
@@ -73,6 +73,9 @@ function App() {
       }
       {
         details.focus && <p className="focus">{details.focus}</p>
+      }
+      {
+        details.name && <Todo/>
       }
       <Weather/>
     </main> 
